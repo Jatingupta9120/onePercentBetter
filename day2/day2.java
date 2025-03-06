@@ -26,6 +26,19 @@ Output:
 import java.util.*;
 public class Day2
 {
+    public static void rotateArraySecondApproach(int arr[],int n){
+        int temp=arr[0];
+        for(int i=0;i<n-1;i++){
+            arr[i]=arr[i+1];
+            //{2,3,4,5,_}
+        }
+        //reassign the temp variable to last
+        arr[n-1]=temp;
+        //{2,3,4,5,1}
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
     public static void rotateArray(int arr[],int n){
         //first we will take a new array which will store our all element expect the 1st one and then after putting all element we can just put the stored element to the last place
         //we are creating an temp array 
@@ -48,5 +61,6 @@ public class Day2
 	    int n=5;
 	    int arr[]={1,2,3,4,5};
 	    rotateArray(arr,n);
+	    rotateArraySecondApproach(arr,n);
 	}
 }
